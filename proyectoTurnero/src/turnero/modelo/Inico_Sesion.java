@@ -1,5 +1,5 @@
 
-package modelo;
+package turnero.modelo;
 
 
 public class Inico_Sesion {

@@ -1,5 +1,5 @@
 
-package modelo;
+package turnero.modelo;
 
 public class Asesor {
     private String cedula, nombre, apellido, telefono,direccion, correo,ciudad,estado,usuario;
