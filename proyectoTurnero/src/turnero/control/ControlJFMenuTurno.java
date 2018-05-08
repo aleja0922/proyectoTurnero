@@ -8,8 +8,8 @@ import java.awt.event.ActionListener;
 import turnero.control.ControlJFRegistroCliente;
 import turnero.control.IO;
 import turnero.vista.JFRegistroClienteTurno;
-import vista.JFMenuTurno;
-import vista.JFRegistroCliente;
+import turnero.vista.JFMenuTurno;
+import turnero.vista.JFRegistroCliente;
 
 public class ControlJFMenuTurno implements ActionListener{
     JFMenuTurno jf;
@@ -24,7 +24,9 @@ public class ControlJFMenuTurno implements ActionListener{
         
         jf.Bregistrocliente.addActionListener(this);
         jf.Bregistroempleado.addActionListener(this);
+        jf.Bregistroempleado.setEnabled(false);
         jf.Bmostrar.addActionListener(this);
+        jf.Bmostrar.setEnabled(false);
         jf.Bsalir.addActionListener(this);
     }
     
@@ -51,6 +53,7 @@ public class ControlJFMenuTurno implements ActionListener{
             );
         }
         if (e.getSource() == jf.Bsalir) {
+            jf.dispose();
             System.exit(0);
         }
         

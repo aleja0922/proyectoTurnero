@@ -2,7 +2,7 @@
 package turnero.principal;
 import turnero.control.ControlJFMenuTurno;
 import turnero.vista.*;
-import vista.JFMenuTurno;
+import turnero.vista.JFMenuTurno;
 
 public class Principal {
     public static void main(String[] args) {

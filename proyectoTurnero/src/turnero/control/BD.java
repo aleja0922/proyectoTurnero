@@ -1,4 +1,5 @@
 package turnero.control;
+
 import turnero.control.IO;
 import java.sql.*;
 
@@ -30,19 +31,20 @@ public class BD {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "aleja1997");  // Coloque aqu� su Login y Password
+              conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "aleja1997");  // Coloque aqu� su Login y Password
+            //conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "luisleon9");  // Coloque aqu� su Login y Password
             sentenciaSQL = conexion.createStatement();
             System.out.println("Conexion hecha");
         } catch (ClassNotFoundException | SQLException error) {
             System.out.println("ERROR EN CONEXION: " + error);
         }
     }
+
     public Connection CerrarConexion() throws SQLException {
         conexion.close();
         conexion = null;
         return conexion;
     }
-    
 
     public Connection getConexion() {
         return (conexion);
@@ -64,7 +66,7 @@ public class BD {
     public void getBD(String commit) {
 
         try {
-            
+
             registro = sentenciaSQL.executeQuery(commit);
 
         } catch (SQLException error) {
@@ -76,19 +78,15 @@ public class BD {
 
     public void desconectar() {
         try {
-            if (registro != null) registro.close();
+            if (registro != null) {
+                registro.close();
+            }
             sentenciaSQL.close();
             conexion.close();
         } catch (SQLException error) {
             System.out.println("ERROR EN DESCONEXION: " + error);
         }
-    
+
     }
 
-
- 
 }
-
-
-
-

@@ -1,37 +1,36 @@
-
 package turnero.modelo;
 
 public class Cliente {
-    
-    private String  tipo_cedula,nombre, apellido, telefono, direccion, correo, ciudad,estado, discapacidad;
-    private int edad,cedula, estrato;
-    
-    public Cliente(){
-         cedula=0;
-         tipo_cedula="";
-    nombre="";
-    apellido="";
-    telefono="";
-    direccion="";
-    correo="";
-    ciudad="";
-    estado="";
-    discapacidad="";
-    edad=0;
-    estrato=0;
+
+    private String cedula, tipo_cedula, nombre, apellido, telefono, direccion, correo, ciudad, estado, discapacidad;
+    private int edad,  estrato;
+
+    public Cliente() {
+        cedula = "";
+        tipo_cedula = "";
+        nombre = "";
+        apellido = "";
+        telefono = "";
+        direccion = "";
+        correo = "";
+        ciudad = "";
+        estado = "";
+        discapacidad = "";
+        edad = 0;
+        estrato = 0;
     }
 
     /**
      * @return the cedula
      */
-    public int getCedula() {
+    public String getCedula() {
         return cedula;
     }
 
     /**
      * @param cedula the cedula to set
      */
-    public void setCedula(int cedula) {
+    public void setCedula(String cedula) {
         this.cedula = cedula;
     }
 
@@ -188,5 +187,5 @@ public class Cliente {
     public void setTipo_cedula(String tipo_cedula) {
         this.tipo_cedula = tipo_cedula;
     }
-    
+
 }
