@@ -32,7 +32,6 @@ public class JFMenuTurno extends javax.swing.JFrame {
         Bregistroempleado = new javax.swing.JButton();
         Bmostrar = new javax.swing.JButton();
         Bsalir = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,8 +51,6 @@ public class JFMenuTurno extends javax.swing.JFrame {
         Bsalir.setForeground(new java.awt.Color(255, 0, 102));
         Bsalir.setText("Salir");
 
-        jTextField1.setText("Consultar Cliente");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,14 +67,11 @@ public class JFMenuTurno extends javax.swing.JFrame {
                             .addComponent(Bregistroempleado)
                             .addComponent(Bregistrocliente)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(72, 72, 72)
-                                .addComponent(Bsalir))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(Bmostrar))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(298, 298, 298)
+                        .addComponent(Bsalir)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -87,15 +81,13 @@ public class JFMenuTurno extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(42, 42, 42)
                 .addComponent(Bregistrocliente)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
                 .addComponent(Bregistroempleado)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(Bmostrar)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(Bsalir)
-                .addGap(56, 56, 56))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,6 +135,5 @@ public class JFMenuTurno extends javax.swing.JFrame {
     public javax.swing.JButton Bregistroempleado;
     public javax.swing.JButton Bsalir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
