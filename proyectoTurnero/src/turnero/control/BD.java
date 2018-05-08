@@ -30,8 +30,8 @@ public class BD {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            //conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "aleja1997");  // Coloque aqu� su Login y Password
-            conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "luisleon9");  // Coloque aqu� su Login y Password
+            conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "aleja1997");  // Coloque aqu� su Login y Password
+            //conexion = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE", "system", "luisleon9");  // Coloque aqu� su Login y Password
             sentenciaSQL = conexion.createStatement();
             System.out.println("Conexion hecha");
         } catch (ClassNotFoundException | SQLException error) {
