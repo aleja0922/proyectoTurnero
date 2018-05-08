@@ -44,7 +44,7 @@ public class ControlJFRegistroCliente implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
+
         if (ae.getSource() == jfrcliente.Bregistrar) {
             guardar();
         }
@@ -126,7 +126,7 @@ public class ControlJFRegistroCliente implements ActionListener {
     }
 
     public Cliente findUserByDocumento(String doc) {
-        Cliente cliente = null;
+
         try {
 
             String sql = "select * from CLIENTES where cedula_cliente = '" + doc + "' ";
@@ -176,8 +176,11 @@ public class ControlJFRegistroCliente implements ActionListener {
     }
 
     public void actualizar() {
+
         if (validateFormulario()) {
+
             Cliente objeto = new Cliente();
+
             objeto.setCedula(jfrcliente.Tnumero.getText().toUpperCase());
             objeto.setNombre(jfrcliente.Tnombre.getText().toUpperCase());
             objeto.setApellido(jfrcliente.Tapellido.getText().toUpperCase());
