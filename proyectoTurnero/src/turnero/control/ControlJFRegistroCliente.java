@@ -22,7 +22,6 @@ public class ControlJFRegistroCliente implements ActionListener {
     public ControlJFRegistroCliente() {
         cn = new BD();
     }
-    
 
     @SuppressWarnings("LeakingThisInConstructor")
 
@@ -31,7 +30,7 @@ public class ControlJFRegistroCliente implements ActionListener {
 
         this.cliente = cliente;
         this.jfrcliente = jfrcliente;
-        
+
         jfrcliente.Blimpiar.addActionListener(this);
         jfrcliente.Bregistrar.addActionListener(this);
         jfrcliente.Bsalircliente.addActionListener(this);
@@ -43,8 +42,9 @@ public class ControlJFRegistroCliente implements ActionListener {
 
     }
 
-     @Override
+    @Override
     public void actionPerformed(ActionEvent ae) {
+        
         if (ae.getSource() == jfrcliente.Bregistrar) {
             guardar();
         }
@@ -62,9 +62,9 @@ public class ControlJFRegistroCliente implements ActionListener {
 
             actualizar();
         }
-         if (ae.getSource() == jfrcliente.Blimpiar) {
+        if (ae.getSource() == jfrcliente.Blimpiar) {
 
-             clean();
+            clean();
         }
 
         if (ae.getSource() == jfrcliente.Bsalircliente) {
@@ -73,8 +73,7 @@ public class ControlJFRegistroCliente implements ActionListener {
         }
 
     }
-    
-   
+
     public boolean createCliente(Cliente cliente) {
         String sql = "insert into clientes values('"
                 + cliente.getCedula() + "', '"
@@ -159,7 +158,7 @@ public class ControlJFRegistroCliente implements ActionListener {
     }
 
     public boolean deleteCliente(String doc) {
-        Cliente cliente = null;
+
         try {
 
             String sql = "delete from CLIENTES where cedula_cliente = '" + doc + "' ";
@@ -176,9 +175,8 @@ public class ControlJFRegistroCliente implements ActionListener {
         }
     }
 
-   
- public void actualizar(){
-         if (validateFormulario()) {
+    public void actualizar() {
+        if (validateFormulario()) {
             Cliente objeto = new Cliente();
             objeto.setCedula(jfrcliente.Tnumero.getText().toUpperCase());
             objeto.setNombre(jfrcliente.Tnombre.getText().toUpperCase());
@@ -202,7 +200,7 @@ public class ControlJFRegistroCliente implements ActionListener {
             IO.mostrar("Diligencie todos los campos obligatorios.");
         }
     }
- 
+
     public void eliminar() {
 
         if ("".equalsIgnoreCase(jfrcliente.Tnumero.getText().trim())) {
