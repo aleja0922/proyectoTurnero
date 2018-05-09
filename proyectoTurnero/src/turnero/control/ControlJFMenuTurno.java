@@ -4,9 +4,6 @@ import turnero.modelo.Cliente;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import turnero.control.ControlJFRegistroCliente;
-import turnero.control.IO;
-import turnero.vista.JFRegistroClienteTurno;
 import turnero.vista.JFMenuTurno;
 import turnero.vista.JFRegistroCliente;
 

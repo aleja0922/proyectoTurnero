@@ -1,16 +1,15 @@
-
 package turnero.modelo;
 
-
 public class Servicio {
+
     private String id_servicio, nombre_servicio, descripcion, tiempo;
-    
-    public Servicio (){
-        
-        id_servicio= "";
-        nombre_servicio="";
-        descripcion="";
-        tiempo="";
+
+    public Servicio() {
+
+        id_servicio = "";
+        nombre_servicio = "";
+        descripcion = "";
+        tiempo = "";
     }
 
     /**
@@ -68,5 +67,5 @@ public class Servicio {
     public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
     }
-    
+
 }

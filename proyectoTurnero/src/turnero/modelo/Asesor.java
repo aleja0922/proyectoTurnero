@@ -1,24 +1,23 @@
-
 package turnero.modelo;
 
 public class Asesor {
-    private String cedula, nombre, apellido, telefono,direccion, correo,ciudad,estado,usuario;
+
+    private String cedula, nombre, apellido, telefono, direccion, correo, ciudad, estado, usuario;
     private int edad, estrato;
-    
-    
-public Asesor (){
-    cedula="";
-    nombre="";
-    apellido="";
-    telefono="";
-    direccion="";
-    correo="";
-    ciudad="";
-    estado="";
-    usuario="";
-    edad=0;
-    estrato=0;
-}
+
+    public Asesor() {
+        cedula = "";
+        nombre = "";
+        apellido = "";
+        telefono = "";
+        direccion = "";
+        correo = "";
+        ciudad = "";
+        estado = "";
+        usuario = "";
+        edad = 0;
+        estrato = 0;
+    }
 
     /**
      * @return the cedula
@@ -132,12 +131,10 @@ public Asesor (){
         this.estado = estado;
     }
 
-
     public String getUsuario() {
         return usuario;
     }
 
-   
     public void setLoguin(String usuario) {
         this.usuario = usuario;
     }

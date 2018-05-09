@@ -6,7 +6,6 @@
 package pruebas;
 
 import turnero.control.ControlJFMenuTurno;
-import turnero.vista.*;
 import turnero.vista.JFMenuTurno;
 
 /**

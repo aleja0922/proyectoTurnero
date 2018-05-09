@@ -1,13 +1,13 @@
-
 package turnero.modelo;
 
 public class Modulo {
+
     private String numero_modulo;
     private String numero_servicio;
     private String cedula_empleado;
-    
-    public Modulo (){
-        
+
+    public Modulo() {
+
     }
 
     /**
@@ -51,6 +51,5 @@ public class Modulo {
     public void setCedula_empleado(String cedula_empleado) {
         this.cedula_empleado = cedula_empleado;
     }
-    
-}
 
+}

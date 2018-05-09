@@ -19,7 +19,7 @@ public class IO {
 
     public static String leerPalabra(String mensaje) {
         String cadena = "";
-        cadena = JOptionPane.showInputDialog(null,mensaje);
+        cadena = JOptionPane.showInputDialog(null, mensaje);
         return cadena;
     }
 
@@ -33,7 +33,8 @@ public class IO {
                 "TURNERO", JOptionPane.YES_NO_OPTION);
         return numero;
     }
-     public static void mostrar(String mensaje) {
+
+    public static void mostrar(String mensaje) {
         JOptionPane.showMessageDialog(null, mensaje);
     }
 

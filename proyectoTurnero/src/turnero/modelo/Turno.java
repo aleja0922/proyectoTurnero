@@ -1,18 +1,18 @@
-
 package turnero.modelo;
 
 public class Turno {
+
     private String numero, fecha, hora, descripcion, numero_modulo, cedula_cliente;
-    
-    public Turno(){
-        
-        numero="";
-        fecha="";
-        hora="";
-        descripcion="";
-        numero_modulo="";
-        cedula_cliente="";
-        
+
+    public Turno() {
+
+        numero = "";
+        fecha = "";
+        hora = "";
+        descripcion = "";
+        numero_modulo = "";
+        cedula_cliente = "";
+
     }
 
     /**
@@ -98,5 +98,5 @@ public class Turno {
     public void setCedula_cliente(String cedula_cliente) {
         this.cedula_cliente = cedula_cliente;
     }
-    
+
 }

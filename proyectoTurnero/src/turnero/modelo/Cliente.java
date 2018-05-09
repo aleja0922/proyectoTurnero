@@ -3,7 +3,7 @@ package turnero.modelo;
 public class Cliente {
 
     private String cedula, tipo_cedula, nombre, apellido, telefono, direccion, correo, ciudad, estado, discapacidad;
-    private int edad,  estrato;
+    private int edad, estrato;
 
     public Cliente() {
         cedula = "";

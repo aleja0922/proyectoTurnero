@@ -1,13 +1,12 @@
-
 package turnero.modelo;
 
-
 public class Inico_Sesion {
+
     private String usuario, contraseña;
-    
-    public Inico_Sesion (){
-        usuario="";
-        contraseña="";
+
+    public Inico_Sesion() {
+        usuario = "";
+        contraseña = "";
     }
 
     /**
@@ -37,5 +36,5 @@ public class Inico_Sesion {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
+
 }
