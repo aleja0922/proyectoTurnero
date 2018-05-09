@@ -74,107 +74,6 @@ public class ControlJFRegistroCliente implements ActionListener {
 
     }
 
-    public boolean createCliente(Cliente cliente) {
-        String sql = "insert into clientes values('"
-                + cliente.getCedula() + "', '"
-                + cliente.getNombre() + "', '"
-                + cliente.getApellido() + "', "
-                + cliente.getEdad() + ", "
-                + cliente.getTelefono() + ", '"
-                + cliente.getDireccion() + "','"
-                + cliente.getCorreo() + "', "
-                + cliente.getEstrato() + ", '"
-                + cliente.getCiudad() + "','"
-                + cliente.getDiscapacidad() + "','"
-                + cliente.getEstado() + "')";
-
-        cn.conectar();
-        boolean result = cn.ejecutar(sql);
-        try {
-            cn.CerrarConexion();
-            return result;
-        } catch (SQLException ex) {
-            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-
-    }
-
-    public boolean updateClienteByDocument(Cliente cliente) {
-        String sql = "update clientes set "
-                + "nombre_cliente = '" + cliente.getNombre() + "' , "
-                + "apellido_cliente = '" + cliente.getApellido() + "' , "
-                + "edad_cliente = '" + cliente.getEdad() + "' , "
-                + "telefono_cliente = '" + cliente.getTelefono() + "' , "
-                + "direccion_cliente = '" + cliente.getDireccion() + "' , "
-                + "email_cliente = '" + cliente.getCorreo() + "' , "
-                + "estrato_empleado = '" + cliente.getEstrato() + "' , "
-                + "ciudad_cliente = '" + cliente.getCiudad() + "' , "
-                + "discapacidad_cliente = '" + cliente.getDiscapacidad() + "' , "
-                + "estado_cliente = '" + cliente.getEstado() + "' where "
-                + "cedula_cliente = '" + cliente.getCedula() + "' ";
-        System.out.println(sql);
-        cn.conectar();
-        boolean result = cn.ejecutar(sql);
-        try {
-            cn.CerrarConexion();
-            return result;
-        } catch (SQLException ex) {
-            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
-    public Cliente findUserByDocumento(String doc) {
-
-        try {
-
-            String sql = "select * from CLIENTES where cedula_cliente = '" + doc + "' ";
-            cn.conectar();
-            cn.getBD(sql);
-
-            if (cn.getRegistro().next()) {
-                cliente = new Cliente();
-
-                cliente.setCedula(cn.getRegistro().getString("cedula_cliente"));
-                cliente.setNombre(cn.getRegistro().getString("nombre_cliente"));
-                cliente.setApellido(cn.getRegistro().getString("apellido_cliente"));
-                cliente.setTelefono(cn.getRegistro().getString("telefono_cliente"));
-                cliente.setDireccion(cn.getRegistro().getString("direccion_cliente"));
-                cliente.setCorreo(cn.getRegistro().getString("email_cliente"));
-                cliente.setCiudad(cn.getRegistro().getString("ciudad_cliente"));
-                cliente.setEstado(cn.getRegistro().getString("estado_cliente"));
-                cliente.setDiscapacidad(cn.getRegistro().getString("discapacidad_cliente"));
-                cliente.setEdad(cn.getRegistro().getInt("edad_cliente"));
-                cliente.setEstrato(cn.getRegistro().getInt("estrato_empleado"));
-            }
-
-            cn.CerrarConexion();
-            return cliente;
-        } catch (SQLException ex) {
-            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
-            return cliente;
-        }
-    }
-
-    public boolean deleteCliente(String doc) {
-
-        try {
-
-            String sql = "delete from CLIENTES where cedula_cliente = '" + doc + "' ";
-            cn.conectar();
-            boolean result = cn.ejecutar(sql);
-
-            cn.CerrarConexion();
-
-            return result;
-
-        } catch (SQLException ex) {
-            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
-            return false;
-        }
-    }
-
     public void actualizar() {
 
         if (validateFormulario()) {
@@ -313,6 +212,107 @@ public class ControlJFRegistroCliente implements ActionListener {
                 || "".equalsIgnoreCase(jfrcliente.Tdiscapacidad.getText().toUpperCase())
                 || "".equalsIgnoreCase(jfrcliente.Tedad.getText().toUpperCase()));
 
+    }
+
+    public boolean createCliente(Cliente cliente) {
+        String sql = "insert into clientes values('"
+                + cliente.getCedula() + "', '"
+                + cliente.getNombre() + "', '"
+                + cliente.getApellido() + "', "
+                + cliente.getEdad() + ", "
+                + cliente.getTelefono() + ", '"
+                + cliente.getDireccion() + "','"
+                + cliente.getCorreo() + "', "
+                + cliente.getEstrato() + ", '"
+                + cliente.getCiudad() + "','"
+                + cliente.getDiscapacidad() + "','"
+                + cliente.getEstado() + "')";
+
+        cn.conectar();
+        boolean result = cn.ejecutar(sql);
+        try {
+            cn.CerrarConexion();
+            return result;
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+
+    }
+
+    public boolean updateClienteByDocument(Cliente cliente) {
+        String sql = "update clientes set "
+                + "nombre_cliente = '" + cliente.getNombre() + "' , "
+                + "apellido_cliente = '" + cliente.getApellido() + "' , "
+                + "edad_cliente = '" + cliente.getEdad() + "' , "
+                + "telefono_cliente = '" + cliente.getTelefono() + "' , "
+                + "direccion_cliente = '" + cliente.getDireccion() + "' , "
+                + "email_cliente = '" + cliente.getCorreo() + "' , "
+                + "estrato_empleado = '" + cliente.getEstrato() + "' , "
+                + "ciudad_cliente = '" + cliente.getCiudad() + "' , "
+                + "discapacidad_cliente = '" + cliente.getDiscapacidad() + "' , "
+                + "estado_cliente = '" + cliente.getEstado() + "' where "
+                + "cedula_cliente = '" + cliente.getCedula() + "' ";
+        System.out.println(sql);
+        cn.conectar();
+        boolean result = cn.ejecutar(sql);
+        try {
+            cn.CerrarConexion();
+            return result;
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
+    }
+
+    public Cliente findUserByDocumento(String doc) {
+
+        try {
+
+            String sql = "select * from CLIENTES where cedula_cliente = '" + doc + "' ";
+            cn.conectar();
+            cn.getBD(sql);
+
+            if (cn.getRegistro().next()) {
+                cliente = new Cliente();
+
+                cliente.setCedula(cn.getRegistro().getString("cedula_cliente"));
+                cliente.setNombre(cn.getRegistro().getString("nombre_cliente"));
+                cliente.setApellido(cn.getRegistro().getString("apellido_cliente"));
+                cliente.setTelefono(cn.getRegistro().getString("telefono_cliente"));
+                cliente.setDireccion(cn.getRegistro().getString("direccion_cliente"));
+                cliente.setCorreo(cn.getRegistro().getString("email_cliente"));
+                cliente.setCiudad(cn.getRegistro().getString("ciudad_cliente"));
+                cliente.setEstado(cn.getRegistro().getString("estado_cliente"));
+                cliente.setDiscapacidad(cn.getRegistro().getString("discapacidad_cliente"));
+                cliente.setEdad(cn.getRegistro().getInt("edad_cliente"));
+                cliente.setEstrato(cn.getRegistro().getInt("estrato_empleado"));
+            }
+
+            cn.CerrarConexion();
+            return cliente;
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return cliente;
+        }
+    }
+
+    public boolean deleteCliente(String doc) {
+
+        try {
+
+            String sql = "delete from CLIENTES where cedula_cliente = '" + doc + "' ";
+            cn.conectar();
+            boolean result = cn.ejecutar(sql);
+
+            cn.CerrarConexion();
+
+            return result;
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ControlJFRegistroCliente.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
     }
 
 }
