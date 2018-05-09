@@ -1,17 +1,13 @@
 package turnero.control;
 
 import turnero.vista.JFRegistroCliente;
-import java.awt.event.*;
-import turnero.control.BD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import turnero.modelo.*;
-import turnero.vista.*;
 
 public class ControlJFRegistroCliente implements ActionListener {
 
